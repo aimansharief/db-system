@@ -20,22 +20,10 @@
 4. **Test the API:**
    - Import `CustomsFreightCompany.postman_collection.json` into Postman and use the requests.
 
-5. **Run tests:**
+5. **Stop Containers:**
    ```sh
-   npm test
+   docker compose down
    ```
-
-- Source code: `src/`
-- API: `http://localhost:3000`
-  ```
-- **Run Migrations:**
-  ```sh
-  docker compose exec app npx ts-node ./node_modules/typeorm/cli.js migration:run -d src/ormconfig.ts
-  ```
-- **Stop Containers:**
-  ```sh
-  docker compose down
-  ```
 
 ---
 
@@ -62,7 +50,6 @@
 npm install
 npm test
 ```
-
 ---
 
 For any questions or improvements, open an issue or PR.
