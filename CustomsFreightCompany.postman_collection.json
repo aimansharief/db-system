@@ -1,0 +1,65 @@
+{
+  "info": {
+    "_postman_id": "cfc-demo-collection-001",
+    "name": "Customs Freight Company API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Postman collection for testing Customs Freight Company backend APIs. Duplicate requests removed."
+  },
+  "item": [
+    {
+      "name": "Vehicle",
+      "item": [
+        { "name": "Create Vehicle (Cargo Plane)", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "body": {"mode": "raw", "raw": "{\n  \"type\": \"cargo_plane\",\n  \"brand\": \"Boeing\",\n  \"load\": 10000,\n  \"capacity\": 50000,\n  \"year\": 2020,\n  \"numberOfRepairs\": 2\n}"}, "url": {"raw": "http://localhost:3000/vehicles", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["vehicles"]}}},
+        { "name": "Get All Vehicles", "request": {"method": "GET", "header": [], "url": {"raw": "http://localhost:3000/vehicles", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["vehicles"]}}},
+        { "name": "Update Vehicle", "request": {"method": "PATCH", "header": [{"key": "Content-Type", "value": "application/json"}], "body": {"mode": "raw", "raw": "{\n  \"brand\": \"UpdatedBrand\"\n}"}, "url": {"raw": "http://localhost:3000/vehicles/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["vehicles", "1"]}}},
+        { "name": "Delete Vehicle", "request": {"method": "DELETE", "header": [], "url": {"raw": "http://localhost:3000/vehicles/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["vehicles", "1"]}}}
+      ]
+    },
+    {
+      "name": "Employee",
+      "item": [
+        { "name": "Create Employee (Mechanic)", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "body": {"mode": "raw", "raw": "{\n  \"name\": \"John\",\n  \"surname\": \"Doe\",\n  \"seniority\": 5,\n  \"certifications\": [\"cargo_plane\"],\n  \"isMechanic\": true\n}"}, "url": {"raw": "http://localhost:3000/employees", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["employees"]}}},
+        { "name": "Get All Employees", "request": {"method": "GET", "header": [], "url": {"raw": "http://localhost:3000/employees", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["employees"]}}},
+        { "name": "Get Mechanics", "request": {"method": "GET", "header": [], "url": {"raw": "http://localhost:3000/mechanics", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["mechanics"]}}},
+        { "name": "Update Employee", "request": {"method": "PATCH", "header": [{"key": "Content-Type", "value": "application/json"}], "body": {"mode": "raw", "raw": "{\n  \"surname\": \"UpdatedSurname\"\n}"}, "url": {"raw": "http://localhost:3000/employees/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["employees", "1"]}}},
+        { "name": "Delete Employee", "request": {"method": "DELETE", "header": [], "url": {"raw": "http://localhost:3000/employees/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["employees", "1"]}}}
+      ]
+    },
+    {
+      "name": "Customer",
+      "item": [
+        { "name": "Create Customer", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "body": {"mode": "raw", "raw": "{\n  \"name\": \"Acme Corp\",\n  \"address\": \"123 Main St\",\n  \"phone1\": \"1234567890\",\n  \"phone2\": \"0987654321\"\n}"}, "url": {"raw": "http://localhost:3000/customers", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["customers"]}}},
+        { "name": "Get All Customers", "request": {"method": "GET", "header": [], "url": {"raw": "http://localhost:3000/customers", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["customers"]}}},
+        { "name": "Update Customer", "request": {"method": "PATCH", "header": [{"key": "Content-Type", "value": "application/json"}], "body": {"mode": "raw", "raw": "{\n  \"address\": \"Updated Address\"\n}"}, "url": {"raw": "http://localhost:3000/customers/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["customers", "1"]}}},
+        { "name": "Delete Customer", "request": {"method": "DELETE", "header": [], "url": {"raw": "http://localhost:3000/customers/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["customers", "1"]}}}
+      ]
+    },
+    {
+      "name": "Shipment",
+      "item": [
+        { "name": "Create Shipment", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "body": {"mode": "raw", "raw": "{\n  \"weight\": 500,\n  \"value\": 10000,\n  \"customerId\": 1,\n  \"origin\": \"Warehouse A\",\n  \"destination\": \"Warehouse B\",\n  \"route\": [\"cargo_plane\", \"long_haul_truck\"]\n}"}, "url": {"raw": "http://localhost:3000/shipments", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["shipments"]}}},
+        { "name": "Get All Shipments", "request": {"method": "GET", "header": [], "url": {"raw": "http://localhost:3000/shipments", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["shipments"]}}},
+        { "name": "Update Shipment", "request": {"method": "PATCH", "header": [{"key": "Content-Type", "value": "application/json"}], "body": {"mode": "raw", "raw": "{\n  \"destination\": \"Updated Destination\"\n}"}, "url": {"raw": "http://localhost:3000/shipments/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["shipments", "1"]}}},
+        { "name": "Delete Shipment", "request": {"method": "DELETE", "header": [], "url": {"raw": "http://localhost:3000/shipments/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["shipments", "1"]}}}
+      ]
+    },
+    {
+      "name": "MechanicRepair",
+      "item": [
+        { "name": "Create Mechanic Repair", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "body": {"mode": "raw", "raw": "{\n  \"vehicleId\": 1,\n  \"mechanicId\": 1,\n  \"estimatedDays\": 3,\n  \"actualDays\": 4\n}"}, "url": {"raw": "http://localhost:3000/repairs", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["repairs"]}}},
+        { "name": "Get All Repairs", "request": {"method": "GET", "header": [], "url": {"raw": "http://localhost:3000/repairs", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["repairs"]}}},
+        { "name": "Update Mechanic Repair", "request": {"method": "PATCH", "header": [{"key": "Content-Type", "value": "application/json"}], "body": {"mode": "raw", "raw": "{\n  \"actualDays\": 10\n}"}, "url": {"raw": "http://localhost:3000/repairs/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["repairs", "1"]}}},
+        { "name": "Delete Mechanic Repair", "request": {"method": "DELETE", "header": [], "url": {"raw": "http://localhost:3000/repairs/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["repairs", "1"]}}}
+      ]
+    },
+    {
+      "name": "Trip",
+      "item": [
+        { "name": "Create Trip", "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "body": {"mode": "raw", "raw": "{\n  \"vehicleId\": 1,\n  \"from\": \"Warehouse A\",\n  \"to\": \"Warehouse B\",\n  \"drivers\": [1, 2],\n  \"shipments\": [1]\n}"}, "url": {"raw": "http://localhost:3000/trips", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["trips"]}}},
+        { "name": "Get All Trips", "request": {"method": "GET", "header": [], "url": {"raw": "http://localhost:3000/trips", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["trips"]}}},
+        { "name": "Update Trip", "request": {"method": "PATCH", "header": [{"key": "Content-Type", "value": "application/json"}], "body": {"mode": "raw", "raw": "{\n  \"to\": \"Updated Destination\"\n}"}, "url": {"raw": "http://localhost:3000/trips/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["trips", "1"]}}},
+        { "name": "Delete Trip", "request": {"method": "DELETE", "header": [], "url": {"raw": "http://localhost:3000/trips/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["trips", "1"]}}}
+      ]
+    }
+  ]
+}
