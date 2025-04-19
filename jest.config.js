@@ -17,6 +17,7 @@ module.exports = {
     '/elasticsearch-',
     '/google-cloud-sdk/',
     '/neo4j/',
-    '<rootDir>/src/__tests__/test-data-source.ts'
+    '<rootDir>/src/__tests__/test-data-source.ts',
+    '\\.d\\.ts$' // Ignore TypeScript declaration files
   ],
 };
